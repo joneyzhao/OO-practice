@@ -13,7 +13,7 @@ public class Teacher extends Person{
     }
 
     public String introduceUpdate() {
-        System.out.println("进入教师introduceUpdate");
+        System.out.println("进入" + this.classNumber + "班,教师的introduceUpdate");
         String returnStr = "My name is " + studentSubject.getName() + ". I am " + studentSubject.getAge() + " years old. I am a Student of Class "+ studentSubject.getClassNumber() +"now.";
         System.out.println(returnStr);
         return returnStr;
