@@ -1,8 +1,23 @@
 package com.thoughtworks.oo;
 
-public class Client {
-    public static void main(String[] args){
-        //学生作为通知者
+import org.junit.Test;
+
+public class ObserverTest {
+    @Test
+    public void should_introduce_relevant_mess_when_change_name(){
+        StudentSubject studentSubject = new StudentSubject(2);
+
+        Student student = new Student("AA", 18, 2, studentSubject);
+        Teacher teacher = new Teacher("JS", 28, 2, studentSubject);
+
+        studentSubject.addObserver(student);
+        studentSubject.addObserver(teacher);
+
+        studentSubject.setNewIntroduceMess("Brov", 18, 2);
+    }
+
+    @Test
+    public void should_introduce_relevant_mess_to_2class_when_change_classNumber(){
         StudentSubject studentSubjectOne = new StudentSubject(2);
         StudentSubject studentSubjectTwo = new StudentSubject(3);
 
@@ -21,8 +36,6 @@ public class Client {
         studentSubjectTwo.addObserver(studentTwo1);
         studentSubjectTwo.addObserver(studentTwo2);
         studentSubjectTwo.addObserver(teacherTwo);
-
-        studentSubjectOne.setNewIntroduceMess("Prov", 20, 2);
 
         studentSubjectOne.setNewIntroduceMess("Brov", 18, 3);
         studentSubjectTwo.setNewIntroduceMess("Brov", 18, 3);

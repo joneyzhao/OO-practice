@@ -4,15 +4,17 @@ public abstract class Person{
 
     public String name;
     public int age;
+    public int classNumber;
     public StudentSubject studentSubject;
 
-//    public Person(String name, int age, StudentSubject studentSubject) {
-//        super(name, age, studentSubject);
-//    }
+    public Person(String name, int age) {
 
-    public Person(String name, int age, StudentSubject studentSubject) {
+    }
+
+    public Person(String name, int age, int classNumber, StudentSubject studentSubject) {
         this.name = name;
         this.age = age;
+        this.classNumber = classNumber;
         this.studentSubject = studentSubject;
     }
 
